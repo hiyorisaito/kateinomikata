@@ -645,7 +645,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def message_text(event):
-    if event.message.text == "先輩の忙しさを確認！":
+    if event.message.text == "支出入力":
         flex_message = FlexSendMessage(
         alt_text='hello',
         contents=flexcontent
@@ -654,7 +654,25 @@ def message_text(event):
             event.reply_token,
             flex_message
         )
-    elif event.message.text == "新人の悩み度を確認！":
+    elif event.message.text == "収入入力":
+        flex_message = FlexSendMessage(
+        alt_text='hello',
+        contents=flexcontent1
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            flex_message
+        ) 
+        elif event.message.text == "支出表示":
+        flex_message = FlexSendMessage(
+        alt_text='hello',
+        contents=flexcontent1
+        )
+        line_bot_api.reply_message(
+            event.reply_token,
+            flex_message
+        ) 
+        elif event.message.text == "貯金額入力":
         flex_message = FlexSendMessage(
         alt_text='hello',
         contents=flexcontent1
