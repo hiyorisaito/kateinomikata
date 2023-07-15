@@ -646,13 +646,13 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def message_text(event):
     if event.message.text == "支出入力":
-        flex_message = FlexSendMessage(
-        alt_text='hello',
-        contents=flexcontent
-        )
+        #flex_message = FlexSendMessage(
+        #alt_text='hello',
+        #contents=flexcontent
+        #)
         line_bot_api.reply_message(
             event.reply_token,
-            flex_message
+            TextSendMessage(text="現在の支出額は")
         )
     elif event.message.text == "収入入力":
         flex_message = FlexSendMessage(
